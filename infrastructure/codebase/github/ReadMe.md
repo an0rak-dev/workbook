@@ -5,9 +5,15 @@ GitHub repository with the exact same settings.
 
 _Note that if you want to use GitHub as your remote code repository, 
 GitHub actions workflows are available in this project and you'll need
-the following secrets in your GH repo :_
+the following secrets in your GH repo, and an Azure AD ServicePrincipal with Contributor
+role to your Subscription :_
 * `AZ_STORAGE` : the name of your Azure storage account which holds your tfstates
 * `AZ_RGROUP` : the name of your Azure resource group which holds the Azure storage
+* `AZ_CLIENT_ID` : the client id of the Azure AD ServicePrincipal which will be used by Terraform to access your Storage
+* `AZ_CLIENT_SECRET`: the secret of the Azure AD ServicePrincipal
+* `AZ_SUBSCRIPTION_ID`: the id of the Azure subscription which will hold the Storage account
+* `AZ_TENANT_ID` : the tenant id which depends your subscription. 
+* `GH_PAT` : A GitHub personal access token with the permissions `repo` & `org:read`.
 
 ## How to deploy it
 
