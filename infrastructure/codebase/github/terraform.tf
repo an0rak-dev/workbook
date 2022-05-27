@@ -14,16 +14,20 @@
 ###############################################################################
 
 terraform {
-    required_version = "~> 1.0"
-    required_providers {
-        github = {
-            source = "integrations/github"
-            version = "~> 4.0"
-        }
+  required_version = "~> 1.0"
+  required_providers {
+    github = {
+      source  = "integrations/github"
+      version = "~> 4.0"
     }
+  }
 
-    backend "azurerm" {
-        container_name = "tfstates"
-        key = "blog.codebase.github.tfstate"
-    }
+  backend "azurerm" {
+    container_name = "tfstates"
+    key            = "blog.codebase.github.tfstate"
+  }
+}
+
+provider "github" {
+  token = var.gh_pat
 }
