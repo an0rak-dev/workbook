@@ -2,7 +2,7 @@
 baseURL: 'https://an0rak.dev/'
 languageCode: 'en-us'
 defaultContentLanguage: 'en'
-title: "An0rak's ramblings and stuffs"
+title: "Sylvain Nieuwlandt"
 copyright: 'Copyright 2022 by Sylvain Nieuwlandt -- All rights reserved'
 
 # Build settings
@@ -14,3 +14,40 @@ canonifyURLs: true
 enableEmoji: true
 noChmod: true
 removePathAccents: true
+
+theme: minimal
+params:
+  author: Sylvain Nieuwlandt
+  profilePic: profile.jpg
+  description: VR Enthusiast
+  githubUsername: an0rak-dev
+  font: "Chivo"
+  copyright: "Copyright 2022 by Sylvain Nieuwlandt -- All rights reserved"
+  highlight: true
+  highlightStyle: default
+  highlightLanguages:
+    - go
+    - cpp
+    - javascript
+    - html
+menu:
+  main:
+    - url: "/"
+      name: Home
+      weight: 1
+    - url: "/about"
+      name: About
+      weight: 2
+  icon:
+    - url: "mailto:nieuwlandt.s@an0rak.dev"
+      name: "fas fa-envelope"
+      weight: 1
+    - url: "https://github.com/an0rak-dev"
+      name: "fab fa-github"
+      weight: 2
+    - url: "https://twitter.com/an0rak_dev"
+      name: "fab fa-twitter"
+      weight: 3
+    - url: "https://linkedin.com/in/sylvain-nieuwlandt"
+      name: "fab fa-linkedin"
+      weight: 4
