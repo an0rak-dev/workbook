@@ -1,0 +1,16 @@
+# Global settings
+baseURL: 'https://an0rak.dev/'
+languageCode: 'en-us'
+defaultContentLanguage: 'en'
+title: "An0rak's ramblings and stuffs"
+copyright: 'Copyright 2022 by Sylvain Nieuwlandt -- All rights reserved'
+
+# Build settings
+buildDrafts: false
+buildExpired: false
+buildFuture: false
+
+canonifyURLs: true
+enableEmoji: true
+noChmod: true
+removePathAccents: true
