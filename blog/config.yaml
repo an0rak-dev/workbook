@@ -18,7 +18,6 @@ removePathAccents: true
 theme: minimal
 params:
   author: Sylvain Nieuwlandt
-  profilePic: profile.jpg
   description: VR Enthusiast
   githubUsername: an0rak-dev
   font: "Chivo"
