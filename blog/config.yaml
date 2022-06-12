@@ -19,7 +19,6 @@ params:
   author: Sylvain Nieuwlandt
   aboutPic: profile.jpg
   description: VR Enthusiast.
-  githubUsername: an0rak-dev
   font: "Chivo"
   copyright: "Copyright 2022 by Sylvain Nieuwlandt -- All rights reserved"
   highlight: true
@@ -37,6 +36,9 @@ menu:
     - url: "/about"
       name: About
       weight: 2
+    - url: "/projects"
+      name: Projects
+      weight: 3
   icon:
     - url: "mailto:nieuwlandt.s@an0rak.dev"
       name: "fas fa-envelope"
