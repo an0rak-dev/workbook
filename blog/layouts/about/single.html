@@ -1,0 +1,12 @@
+{{ partial "header" . }}
+
+<main id="mainAbout">
+    <div>
+        {{ with .Site.Params.aboutPic }} <img src="{{ . }}"> {{ end }}
+    </div>
+    <div>
+        {{ .Content }}
+    </div>
+</main>
+
+{{ partial "footer" . }}

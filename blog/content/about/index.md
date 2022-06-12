@@ -1,5 +1,9 @@
+---
+type: about
+---
+
 I'm Sylvain, a Cloud architect currently working at [Artifakt](https://artifakt.com), 
-a French based PaaS (Platform-as-a-Service). My day to day work mainly involves 
+a French based PaaS (Platform-as-a-Service). My day to day work mainly involves
 developing/maintaining Kubernetes controllers, Terraform recipes, NodeJS applications...
 
 By night, I'm a big fan of Virtual Reality and video games. So I spend most of my free 
