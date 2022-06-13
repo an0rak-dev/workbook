@@ -1,12 +1,12 @@
 {{ partial "header" . }}
 
-<main>
+<main id="mainBlogList">
     <h2>{{ .Title }}</h2>
     {{ .Content }}
 
     {{ range (.Paginator 5).Pages }} 
         <li>
-            <a href="{{ .Permalink }}">{{.Date.Format "2006-01-02"}} | {{.Title}}</a>
+            <span>{{.Date.Format "2006-01-02"}}</span> -- <a href="{{ .Permalink }}">{{.Title}}</a>
         </li>
     {{ end }}
 </main>

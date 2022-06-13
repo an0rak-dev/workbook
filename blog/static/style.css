@@ -4,18 +4,26 @@ html, body {
 
 body {
     padding-top: 55px;
-    display: flex;
-    flex-direction: column;
+}
+
+body, nav {
+    margin: 0;
+    padding: 0;
 }
 
 main {
     margin: auto;
     padding: 25px;
-    flex: 1 0 auto;
-    max-width: 80%;
+    width: 80%;
+    margin-top: 5%;
 }
 
-a:link, a:visited {
+a {
+    text-decoration: none;
+    color: var(--accent);
+}
+
+a:hover {
     color: var(--accent);
 }
 
@@ -23,67 +31,75 @@ a.icon:hover {
     text-decoration: none;
 }
 
-a:hover {
-    color: var(--accent) !important;
+/** NAVIGATION ********************************************/
+
+nav {
+    top : 0;
+    position: absolute;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.07);
+    height: 50px;
 }
 
-.copyright {
-    margin: 15px 0;
+nav ul {
+    list-style-type: none;
 }
 
-.navbar-icon {
-    font-size: 125%;
-    display: inline-block !important;
+nav li {
+    display: inline;
+    float: left;
 }
 
-.navbar.navbar-default {
-    border-top: var(--border-width) solid var(--accent);
+nav a {
+    text-decoration: none;
+    color: inherit;
+    padding: 10px;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+nav div:first-child {
+    float: left;
+    margin-left: 2%;
+}
+
+nav div:last-child {
+    float: right;
+    margin-right: 2%;
 }
 
 footer {
-    border-bottom: var(--border-width) solid var(--accent);
     text-align: center;
+    bottom: 0;
+    position: absolute;
+    width: 100%;
+    opacity: 0.7;
 }
-
-/*
-
-.pages {
-    padding: 15px 0;
-}
-
-.pages-icon {
-    padding: 0 15px;
-}
-
-.item {
-    padding: 10px 0;
-}
-
-.item-tag {
-    background-color: var(--accent);
-}
-
-*/
 
 /** HOME PAGE **************************************************/
 
-.intro {
+#mainIntro {
     transform: translateY(22vh);
+    width: 60%;
 }
 
-.intro > h1 {
+#mainIntro > h1 {
     color: #212121;
     font-size: 9vh;
 }
 
-.intro > h2 {
+#mainIntro > h2 {
     color: #757575;
     font-size: 3vmin;
+    font-style: italic;
 }
 
 /** ABOUT PAGE *************************************************/
 #mainAbout div {
     float: left;
+    margin-top: 10%;
 }
 
 #mainAbout img {
@@ -105,4 +121,16 @@ footer {
 
 #mainAbout div:nth-child(2) {
     width: 65%;
+}
+
+
+/** BLOG LIST PAGE **************************************************/
+
+#mainBlogList {
+    text-align: center;
+}
+
+#mainBlogList li span {
+    opacity: 0.6;
+    font-style: italic;
 }

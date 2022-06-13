@@ -36,8 +36,8 @@ menu:
     - url: "/about"
       name: About
       weight: 2
-    - url: "/projects"
-      name: Projects
+    - url: "/blog"
+      name: Blog
       weight: 3
   icon:
     - url: "mailto:nieuwlandt.s@an0rak.dev"

@@ -26,7 +26,44 @@
     </head>
 
     <body>
-        <nav class="navbar navbar-default navbar-fixed-top">
+        <nav>
+            <div>
+            {{ if .Site.Menus.main }}
+                <ul>
+                    {{ range sort .Site.Menus.main }}
+                        <li>
+                            <a href="{{ .URL }}">{{ .Name }}</a>
+                        </li>
+                    {{ end }}
+                </ul>
+            {{ end }}
+            </div>
+            <div>
+            {{ if .Site.Menus.icon }}
+                <ul>
+                    {{ range sort .Site.Menus.icon }}
+                        <li>
+                            <a href="{{ .URL }}">
+                                <i class="{{ .Name }}"></i>
+                            </a>
+                        </li>
+                    {{ end }}
+                </ul>
+            {{ end }}
+            </div>
+        </nav>
+
+
+
+
+
+
+
+
+
+
+
+            <!--
             <div class="container">
                 <div class="navbar-header">
                     <a class="navbar-brand visible-xs" href="#">{{ .Title }}</a>
@@ -54,3 +91,5 @@
                 </div>
             </div>
         </nav>
+        
+        -->
