@@ -28,6 +28,7 @@ params:
     - cpp
     - javascript
     - html
+  mathjax: true
 menu:
   main:
     - url: "/"
