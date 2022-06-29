@@ -10,6 +10,8 @@ the website.
 
 * [infrastructure](./infrastructure/ReadMe.md) : everything related to the 
     infrastructure of this project (website hosting, repository...)
+* [blog](./blog/ReadMe.md): The blog part of the site, which contains the 
+    frontend and the blogpost.
 
 ## Credits & License
 
