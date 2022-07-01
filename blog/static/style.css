@@ -3,9 +3,9 @@ html, body {
 }
 
 body {
-    padding-top: 55px;
     display: flex;
     flex-direction: column;
+    background-color: #f8f8f8;
 }
 
 body, nav {
@@ -15,9 +15,7 @@ body, nav {
 
 main {
     margin: auto;
-    padding: 25px;
     width: 80%;
-    margin-top: 2%;
 }
 
 a {
@@ -36,15 +34,15 @@ a.icon:hover {
 /** NAVIGATION ********************************************/
 
 nav {
-    top : 0;
-    position: absolute;
-    width: 100%;
+    width: 100vw;
     background-color: rgba(0, 0, 0, 0.07);
-    height: 50px;
+    flex: auto;
+    max-height: 50px;
 }
 
 nav ul {
     list-style-type: none;
+    height: 20px;
 }
 
 nav li {
@@ -82,7 +80,6 @@ footer {
 /** HOME PAGE **************************************************/
 
 #mainIntro {
-    transform: translateY(22vh);
     width: 60%;
 }
 
@@ -100,7 +97,6 @@ footer {
 /** ABOUT PAGE *************************************************/
 #mainAbout div {
     float: left;
-    margin-top: 10%;
 }
 
 #mainAbout img {
@@ -139,12 +135,20 @@ footer {
 /** BLOG POST PAGE *************************************************/
 
 #mainBlogPost {
-    width: 60%;
-    margin-left: auto;
-    margin-right: auto;
+    width: 100vw;
 }
 
-#mainBlogPost img.blogBanner { /* And a good possibility of joke about BruceBanner wasted... */
+#mainBlogPost h1 {
+    margin-top: 0;
+}
+
+#mainBlogPost > div {
+    width: 60%;
+    margin: 0 auto;
+    background-color: #ffffff;
+}
+
+#mainBlogPost img {
     height: 300px;
     max-width: 100%;
 }

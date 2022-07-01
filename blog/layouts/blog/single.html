@@ -1,16 +1,18 @@
 {{ partial "header" . }}
 
 <main id="mainBlogPost">
-    {{ if .Params.banner }}
-        <img src="{{ .Params.banner }}" alt="{{ .Title }} Banner" class="blogBanner" />
-    {{ end }}
+    <div>
+        {{ if .Params.banner }}
+            <img src="{{ .Params.banner }}" alt="{{ .Title }} Banner" class="blogBanner" />
+        {{ end }}
 
-    <h1>{{ .Title }}</h1>
-    {{ if .Params.subtitle }}
-        <h4>{{ .Params.subtitle }}</h4>
-    {{ end }}
+        <h1>{{ .Title }}</h1>
+        {{ if .Params.subtitle }}
+            <h4>{{ .Params.subtitle }}</h4>
+        {{ end }}
 
-    {{ .Content }}
+        {{ .Content }}
+    </div>
 </main>
 
 {{ partial "footer" . }}
