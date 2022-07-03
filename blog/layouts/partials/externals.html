@@ -1,7 +1,11 @@
 <link rel="stylesheet" href="{{ "style.css" | absURL }}">
 
 <!-- google fonts -->
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ .Site.Params.font }}">
+{{ if .Site.Params.fonts }}
+  {{ range .Site.Params.fonts }}
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{ . }}">
+  {{ end }}
+{{ end }}
 
 <!-- highlight.js -->
 {{ if .Site.Params.highlight | default false }} 

@@ -4,6 +4,8 @@ languageCode: 'en-us'
 defaultContentLanguage: 'en'
 title: "Sylvain Nieuwlandt"
 copyright: 'Copyright 2022 by Sylvain Nieuwlandt -- All rights reserved'
+taxonomies:
+  tag: tags
 
 # Build settings
 buildDrafts: false
@@ -19,7 +21,9 @@ params:
   author: Sylvain Nieuwlandt
   aboutPic: profile.jpg
   description: VR Enthusiast.
-  font: "Chivo"
+  fonts: 
+    - "Montserrat"
+    - "Roboto"
   copyright: "Copyright 2022 by Sylvain Nieuwlandt -- All rights reserved"
   highlight: true
   highlightStyle: default

@@ -3,6 +3,10 @@ title: "My side project"
 date: 2022-06-29T20:07:34+02:00
 publishDate: "2022-06-29"
 draft: false
+tags:
+- Avatar
+- VR
+- Stargate
 ---
 
 I'm someone which is deeply curious about everything. If you ask people who
@@ -11,8 +15,10 @@ something that always drive me mad.
 Also, I hate being bored, there's so much things to do in this world, so 
 much thing to learn that being bored is just a waste of time and resources.
 
+<!--
 ![A Gif of Anthony Hopkins in Westworld saying 'that only boring people get 
 bored'](/blogposts/my_side_project/boring.gif)
+-->
 
 Of course I work in my day life, and I'm a father too so my brain is quite 
 busy, but there's time when it miss the fuel. That's why I decided to launch 
