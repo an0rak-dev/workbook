@@ -44,6 +44,9 @@ menu:
     - url: "/blog"
       name: Blog
       weight: 3
+    - url: "/project"
+      name: Projects
+      weight: 4
   icon:
     - url: "mailto:nieuwlandt.s@an0rak.dev"
       name: "fas fa-envelope"

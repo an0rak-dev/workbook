@@ -8,7 +8,7 @@ developing/maintaining Kubernetes controllers, Terraform recipes, NodeJS applica
 
 By night, I'm a big fan of Virtual Reality and video games. So I spend most of my free 
 time with either my family, or working on something related to VR. You can find more 
-about my current works in the [Projects section](/projects).
+about my current works in the [Projects section](/project).
 
 I'm kind of missing the really community part of the web, where everyone has his own 
 website, iirc chat rooms, and mailing lists (notifications should be banned, unless you 

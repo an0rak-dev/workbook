@@ -1,0 +1,22 @@
+{{ partial "header" . }}
+
+<main id="mainProjectList">
+    <h2>ProjectsTEST</h2>
+    {{ .Content }}
+
+    {{ range .Paginator.Pages }} 
+        <div>
+            {{ .Page.Params.thumbnail }}
+            
+            {{ .Page.Title }}
+            
+            {{ if not .Page.Params.endDate }}
+            Work in Progress 
+            {{ end }}
+
+            {{ .Page.Params.description }}
+        </div>
+    {{ end }}
+</main>
+
+{{ partial "footer" . }}
