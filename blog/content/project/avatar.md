@@ -3,6 +3,9 @@ thumbnail: /projects/avatar/thumbnail.jpg
 title: "Avatar"
 startDate: "2022-06-13"
 description: "My homemade VR game engine"
+tags:
+- Avatar
+- VR
 ---
 
 ## Roadmap
@@ -305,6 +308,10 @@ scene object on each call.
 Works, but might need to be extract from the `GameState`... `GameState` should only 
 contains the global state of the game, not all the meshs... that the purpose of a 
 `Level` (if I take the UnrealEngine vocab.).
+
+Here's what I got for the moment : 
+
+![A Blue window with a multicolored gradient rectangle in it](/projects/avatar/first_draw.jpg)
 
 ---
 

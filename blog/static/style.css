@@ -15,7 +15,6 @@ body, nav {
 
 main {
     margin: auto;
-    margin-top: 5vh;
     width: 80%;
     
     font-size: 17px;
@@ -144,13 +143,16 @@ footer {
     font-style: italic;
 }
 
-/** BLOG POST PAGE *************************************************/
+/** BLOG/PROJECT POST PAGE ******************************************/
 
-#mainBlogPost {
+#mainBlogPost, 
+#mainProjectPost {
     width: 100vw;
+    margin-top: 5vh;
 }
 
-#mainBlogPost h1 {
+#mainBlogPost h1, 
+#mainProjectPost h1 {
     margin-top: 0;
     margin-bottom: 20px;
     font-size: 60px;
@@ -159,44 +161,52 @@ footer {
     font-family: 'Roboto';
 }
 
-#mainBlogPost .tags {
+#mainBlogPost .tags, 
+#mainProjectPost .tags {
     font-weight: bold;
     opacity: 0.8;
     font-size: 13px;
     margin-bottom: 50px;
 }
 
-#mainBlogPost .tags > a {
+#mainBlogPost .tags > a,
+#mainProjectPost .tags > a {
     font-weight: normal;
     font-style: italic;
 }
 
-#mainBlogPost .tags > a:after {
+#mainBlogPost .tags > a:after,
+#mainProjectPost .tags > a:after {
     content: ", ";
 }   
 
-#mainBlogPost .tags > a:last-child:after {
+#mainBlogPost .tags > a:last-child:after,
+#mainProjectPost .tags > a:last-child::after {
     content: "";
 }
 
-#mainBlogPost > div {
+#mainBlogPost > div,
+#mainProjectPost > div {
     width: 60%;
     margin: 0 auto;
     background-color: #ffffff;
     padding: 15px;
 }
 
-#mainBlogPost img {
+#mainBlogPost img, 
+#mainProjectPost img {
     height: 300px;
     max-width: 100%;
 }
 
-#mainBlogPost h2 {
+#mainBlogPost h2,
+#mainProjectPost h2 {
     font-size: 23px;
     margin-top: 100px;
 }
 
-#mainBlogPost img {
+#mainBlogPost img,
+#mainProjectPost img {
     margin: auto;
     display: block;
     max-width: 80%;

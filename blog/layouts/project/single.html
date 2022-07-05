@@ -1,10 +1,7 @@
 {{ partial "header" . }}
 
-<main id="mainBlogPost">
+<main id="mainProjectPost">
     <div>
-        {{ if .Params.banner }}
-            <img src="{{ .Params.banner }}" alt="{{ .Title }} Banner" class="blogBanner" />
-        {{ end }}
         <h1>{{ .Title }}</h1>
         {{ if .Params.tags }}
             <div class="tags">In: {{ range (.GetTerms "tags") }} <a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a> {{ end }}</div>

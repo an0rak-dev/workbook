@@ -1,5 +1,8 @@
-{{ range (.Paginator 5).Pages }} 
+{{ range .Pages }} 
     <li>
-        <span>{{.PublishDate.Format "2006-01-02"}}</span> -- <a href="{{ .Permalink }}">{{.Title}}</a>
+        {{ if .PublishDate }}
+        <span>{{.PublishDate.Format "2006-01-02"}}</span> -- 
+        {{ end }} 
+        <a href="{{ .Permalink }}">{{.Title}}</a>
     </li>
 {{ end }}
