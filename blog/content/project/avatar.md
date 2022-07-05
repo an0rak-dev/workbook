@@ -1,7 +1,7 @@
 ---
-thumbnail: /projects/avatar.jpg
+thumbnail: /projects/avatar/thumbnail.jpg
 title: "Avatar"
-startedDate: "2022-06-13"
+startDate: "2022-06-13"
 description: "My homemade VR game engine"
 ---
 

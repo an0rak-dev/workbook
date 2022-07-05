@@ -1,18 +1,22 @@
 {{ partial "header" . }}
 
 <main id="mainProjectList">
-    <h2>ProjectsTEST</h2>
-    {{ .Content }}
-
+    <h2>Projects</h2>
+    
     {{ range .Paginator.Pages }} 
-        <div>
-            {{ .Page.Params.thumbnail }}
+        <div onclick="window.location.href={{ .Page.RelPermalink }};">
+            <img src="{{ .Page.Params.thumbnail }}" alt="Project {{ .Page.Title}} thumbnail" />
             
-            {{ .Page.Title }}
+            <h4>{{ .Page.Title }}</h4>
             
-            {{ if not .Page.Params.endDate }}
-            Work in Progress 
-            {{ end }}
+            <div>
+                Started : {{ .Page.Params.startDate }} - 
+                {{ if not .Page.Params.endDate }}
+                Work in Progress
+                {{ else }}
+                .Page.Params.endDate
+                {{ end }}
+            </div>
 
             {{ .Page.Params.description }}
         </div>

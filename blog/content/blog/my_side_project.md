@@ -140,5 +140,9 @@ with my thoughts _as is_, just to keep a track.
 
 If someone finds it interesting, now or later, I'll be very glad. 
 
+In any case, you can follow the progress of this project [here](/project/avatar)
+and I'll also publish technical or more complex thoughts on this blog, so stay 
+tunned if you're interested !
+
 ![Michael Shanks, as Daniel Jackson, waving the paw of a teddy bear in his 
 hands](/blogposts/my_side_project/bye.gif)
