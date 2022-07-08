@@ -1,0 +1,81 @@
+name: PullRequest in infrastructure/codebase
+
+on:
+  pull_request:
+    paths: 
+      - "infrastructure/codebase/github/**"
+      - ".github/workflows/pr_infra_codebase.yaml"
+
+env:
+  TF_VERSION: 1.0.9
+
+defaults:
+  run:
+    working-directory: infrastructure/codebase/github
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Initialize Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: ${{ env.TF_VERSION }}
+      - name: Check TF format
+        run: terraform fmt -check 
+      - name: Validate TF
+        run: |
+          export AZ_STORAGE_NAME="${{ secrets.AZ_STORAGE }}"
+          export AZ_RESOURCE_GROUP="${{ secrets.AZ_RGROUP }}"
+          export ARM_CLIENT_ID="${{ secrets.AZ_CLIENT_ID }}"
+          export ARM_CLIENT_SECRET="${{ secrets.AZ_CLIENT_SECRET }}"
+          export ARM_SUBSCRIPTION_ID="${{ secrets.AZ_SUBSCRIPTION_ID }}"
+          export ARM_TENANT_ID="${{ secrets.AZ_TENANT_ID }}"
+          terraform init \
+            -backend-config storage_account_name="$AZ_STORAGE_NAME" \
+            -backend-config resource_group_name="$AZ_RESOURCE_GROUP"
+          terraform validate -no-color
+
+  plan:
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: 'write'
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Initialize Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: ${{ env.TF_VERSION }}
+      - name: Plan TF
+        id: plan
+        run: |
+          export AZ_STORAGE_NAME="${{ secrets.AZ_STORAGE }}"
+          export AZ_RESOURCE_GROUP="${{ secrets.AZ_RGROUP }}"
+          export ARM_CLIENT_ID="${{ secrets.AZ_CLIENT_ID }}"
+          export ARM_CLIENT_SECRET="${{ secrets.AZ_CLIENT_SECRET }}"
+          export ARM_SUBSCRIPTION_ID="${{ secrets.AZ_SUBSCRIPTION_ID }}"
+          export ARM_TENANT_ID="${{ secrets.AZ_TENANT_ID }}"
+          terraform init \
+            -backend-config storage_account_name="$AZ_STORAGE_NAME" \
+            -backend-config resource_group_name="$AZ_RESOURCE_GROUP"
+          terraform plan -no-color -var gh_pat="${{ secrets.GH_PAT }}" -lock=false
+      - name: Comment PR with plan
+        uses: actions/github-script@v6
+        with:
+          script: |
+            let message = `${{ steps.plan.outputs.stdout }}`;
+            let completeMessage = `
+            ### Plan output
+            \`\`\`
+                ${message}
+            \`\`\`
+            `;
+            github.rest.issues.createComment({
+              issue_number: context.issue.number,
+              owner: context.repo.owner,
+              repo: context.repo.repo,
+              body: completeMessage,
+            });
