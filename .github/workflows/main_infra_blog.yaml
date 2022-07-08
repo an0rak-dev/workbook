@@ -39,4 +39,4 @@ jobs:
           terraform init \
             -backend-config storage_account_name="$AZ_STORAGE_NAME" \
             -backend-config resource_group_name="$AZ_RESOURCE_GROUP"
-          terraform apply -auto-approve -no-color -var gh_pat="${{ secrets.GH_PAT }}" -lock=false
+          terraform apply -auto-approve -no-color -var az_location="West Europe" -var az_resource_group="$AZ_RESOURCE_GROUP" -lock=false
