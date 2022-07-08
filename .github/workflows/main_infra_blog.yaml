@@ -1,7 +1,7 @@
 name: Commit on main in infrastructure/blog
 
 on:
-  workflow_dispatch
+  workflow_dispatch:
   push:
     branches:
       - main
