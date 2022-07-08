@@ -1,5 +1,5 @@
-resource "azure_storage_account" "blog" {
-  name                     = "an0rak-blog"
+resource "azurerm_storage_account" "blog" {
+  name                     = "an0rakblog"
   resource_group_name      = var.az_resource_group
   location                 = var.az_location
   account_tier             = "Standard"

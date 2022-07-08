@@ -16,14 +16,18 @@
 terraform {
   required_version = "~> 1.0"
   required_providers {
-    github = {
-      source  = "integrations/github"
-      version = "~> 4.0"
+    azurerm = {
+      source  = "hashicorp/azurerm"
+      version = "=3.0.0"
     }
   }
 
   backend "azurerm" {
     container_name = "tfstates"
-    key            = "blog.blog.azstorage.tfstate"
+    key            = "blog.blog.github.tfstate"
   }
+}
+
+provider "azurerm" {
+  features {}
 }

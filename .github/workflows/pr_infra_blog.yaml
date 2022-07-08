@@ -12,6 +12,8 @@ env:
 defaults:
   run:
     working-directory: infrastructure/blog
+
+jobs:
   validate:
     runs-on: ubuntu-latest
     steps:
@@ -59,7 +61,7 @@ defaults:
           terraform init \
             -backend-config storage_account_name="$AZ_STORAGE_NAME" \
             -backend-config resource_group_name="$AZ_RESOURCE_GROUP"
-          terraform plan -no-color -var gh_pat="${{ secrets.GH_PAT }}" -lock=false
+          terraform plan -no-color -var az_location="West Europe" -var az_resource_group="$AZ_RESOURCE_GROUP" -lock=false
       - name: Comment PR with plan
         uses: actions/github-script@v6
         with:
