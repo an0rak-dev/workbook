@@ -1,19 +1,17 @@
-name: PullRequest in infrastructure
+name: PullRequest in infrastructure/blog
 
 on:
   pull_request:
     paths: 
-      - "infrastructure/**"
-      - ".github/workflows/pr_infra.yaml"
+      - "infrastructure/blog/**"
+      - ".github/workflows/pr_infra_blog.yaml"
 
 env:
   TF_VERSION: 1.0.9
 
 defaults:
   run:
-    working-directory: infrastructure/codebase/github
-
-jobs:
+    working-directory: infrastructure/blog
   validate:
     runs-on: ubuntu-latest
     steps:
