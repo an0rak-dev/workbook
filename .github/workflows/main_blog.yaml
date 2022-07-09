@@ -10,6 +10,9 @@ defaults:
   run:
     working-directory: blog
 
+# This action needs a deployment service principal to be stored in the secrets AZ_BLOG_DEPLOY_SA
+# az ad sp create-for-rbac --name blogDeployer --role contributor --scopes /subscriptions/{subscription-id}/resourceGroups/{resource-group} --sdk-auth
+
 jobs:
   deploy:
     runs-on: ubuntu-latest
@@ -27,3 +30,16 @@ jobs:
             exit 0
           fi
           exit 1
+      - name: Login to Azure
+        uses: azure/login@v1
+        with:
+          creds: ${{ secrets.AZ_BLOG_DEPLOY_SA }}
+      - name: Publish the content to Azure
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az storage blob update-batch --account_name 'an0rakblog' --auth-mode key -d '$web' -s ./public
+      - name: Logout from Azure
+        if: always()
+        run: |
+          az logout
