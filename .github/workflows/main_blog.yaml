@@ -41,7 +41,7 @@ jobs:
         uses: azure/CLI@v1
         with:
           inlineScript: |
-            az storage blob update-batch --account-name 'an0rakblog' --auth-mode key -d '$web' -s ./public
+            az storage blob upload-batch --account-name 'an0rakblog' --auth-mode key -d '$web' -s ./public
       - name: Logout from Azure
         if: always()
         run: |
