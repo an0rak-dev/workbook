@@ -1,9 +1,9 @@
 name: Commit on main in blog
 
 on:
-  branches:
-    - main
-  pull_request:
+  push:
+    branches:
+      - main
     paths: 
       - "blog/**"
       - ".github/workflows/main_blog.yaml"
