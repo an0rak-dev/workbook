@@ -25,7 +25,7 @@ resource "azurerm_cdn_profile" "blog_cdn" {
 }
 
 resource "azurerm_cdn_endpoint" "blog_endpoint" {
-  name                = "CDN Endpoint"
+  name                = "an0rak-cdn-endpoint"
   profile_name        = azurerm_cdn_profile.blog_cdn.name
   location            = var.az_location
   resource_group_name = var.az_resource_group
