@@ -36,7 +36,7 @@ resource "azurerm_cdn_endpoint" "blog_endpoint" {
 }
 
 resource "azurerm_cdn_endpoint_custom_domain" "blog_custom_endpoint" {
-  name            = "CDN Custom endpoint"
+  name            = "Custom-endpoint"
   cdn_endpoint_id = azurerm_cdn_endpoint.blog_endpoint.id
   host_name       = var.root_domain
 }
