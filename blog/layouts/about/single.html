@@ -2,7 +2,7 @@
 
 <main id="mainAbout">
     <div>
-        {{ with .Site.Params.aboutPic }} <img src="./{{ . }}"> {{ end }}
+        {{ with .Site.Params.aboutPic }} <img src="/about/{{ . }}"> {{ end }}
     </div>
     <div>
         {{ .Content }}
