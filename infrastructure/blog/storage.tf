@@ -24,17 +24,17 @@ resource "azurerm_cdn_profile" "blog_cdn" {
   sku                 = "Standard_Microsoft"
 }
 
-resource "azurerm_cdn_endpoint" "blog_endpoint" {
-  name                = "an0rak-cdn-endpoint"
-  profile_name        = azurerm_cdn_profile.blog_cdn.name
-  location            = var.az_location
-  resource_group_name = var.az_resource_group
-  origin {
-    name      = "blog"
-    host_name = azurerm_storage_account.blog.primary_blob_host
-  }
-}
-
-output "CDN_Endpoint" {
-  value = azurerm_cdn_endpoint.blog_endpoint.fqdn
-}
+#resource "azurerm_cdn_endpoint" "blog_endpoint" {
+#  name                = "an0rak-cdn-endpoint"
+#  profile_name        = azurerm_cdn_profile.blog_cdn.name
+#  location            = var.az_location
+#  resource_group_name = var.az_resource_group
+#  origin {
+#    name      = "blog"
+#    host_name = azurerm_storage_account.blog.primary_blob_host
+#  }
+#}
+#
+#output "CDN_Endpoint" {
+#  value = azurerm_cdn_endpoint.blog_endpoint.fqdn
+#}

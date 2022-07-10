@@ -42,6 +42,11 @@ jobs:
         with:
           inlineScript: |
             az storage blob upload-batch --account-name 'an0rakblog' --auth-mode key -d '$web' -s ./blog/public --overwrite
+      - name: Purge CDN endpoint
+        uses: azure/CLI@v1
+        with:
+          inlineScript: |
+            az cdn endpoint purge --content-paths  "/*" --profile-name "${{ secrets.AZ_CDN_PROFILE }}" --name "${{ secrets.AZ_CDN_ENDPOINT }}" --resource-group "${{ secrets.AZ_RGROUP }}"
       - name: Logout from Azure
         if: always()
         run: |
