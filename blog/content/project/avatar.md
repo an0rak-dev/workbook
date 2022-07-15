@@ -330,3 +330,25 @@ most controversial trial.
 Working exclusively on my personal website, to finish it. Almost done, only the 
 comments system to setup. Pat in the back for me.
 
+---
+
+### 07-15-2022
+
+I'll not do the comment system on my website, I don't want this blog to become like
+Twitter, Facebook or anything like this. If people like the thing they see, or want 
+to discuss with me about it, there's a contact section.²
+
+Also Got the Covid last week, still pretty tired now, but no more fever. But the 
+website is online now, so let's back to work shall we ?
+
+I've left the work where I displayed a multicolored cube on screen. Well, 
+_technically_ I know it's a cube, because of its vertices positions, but on screen 
+is a flat rectangle. 
+
+It still miss a proper Model-View-Projection matrix (and a decent rotation) on each 
+frame in order to be shown as a 3d cube. I'll start with the easy part : perspective
+parameters (fov, aspect ratio, near/far...), the camera position, and the rotation 
+setting, then I'll calculate the matrices (this will certainly leads me to a new
+Math module), and finally the funny part : inject those matrix into the GPU using a 
+Constant buffer.
+
