@@ -336,7 +336,7 @@ comments system to setup. Pat in the back for me.
 
 I'll not do the comment system on my website, I don't want this blog to become like
 Twitter, Facebook or anything like this. If people like the thing they see, or want 
-to discuss with me about it, there's a contact section.²
+to discuss with me about it, there's a contact section.
 
 Also Got the Covid last week, still pretty tired now, but no more fever. But the 
 website is online now, so let's back to work shall we ?
@@ -351,4 +351,30 @@ parameters (fov, aspect ratio, near/far...), the camera position, and the rotati
 setting, then I'll calculate the matrices (this will certainly leads me to a new
 Math module), and finally the funny part : inject those matrix into the GPU using a 
 Constant buffer.
+
+---
+
+### 07-17-2022
+
+Spend a lot of time today reading about frustum projection, perspective matrices and 
+mathematics regarding this.
+
+Of course I still have the possibility to simply import DirectX Math and do a basic 
+call to `XMMatrixPerspectiveFovLH` but remember the first purpose of this project:  
+I want to _learn_.
+
+It's a bit difficult for the Math part, don't get me wrong, I love math. More specially
+I _loved_ maths. But thanks to a duo of math teachers from high school which knows shit 
+about Math (one of them is still convinced that `x/y == y/x`, yeah, won 2hours of 
+detention after I managed to prove him is wrong...) and are here only to get their salary 
+(and thanks for the generations you fucked up aholes !) I developed a basic rejection of 
+Mathematics, and I need to learn how to love them again.
+
+Man, I would have loved to have Harold Finch from Person Of Interest as a Math teacher 
+(check [this scene](https://www.youtube.com/watch?v=CEfLVCus4iY)).
+
+Anyway, back to the subject, I found [this page](https://www.scratchapixel.com/lessons/3d-basic-rendering/perspective-and-orthographic-projection-matrix/building-basic-perspective-projection-matrix)
+which explains how to calculate a basic perspective matrix, and the reasonment behind it.
+I'll save it and re-read it later, I think that I need to read it at least twice to 
+understand all of it.
 
