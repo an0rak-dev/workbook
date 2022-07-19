@@ -378,3 +378,24 @@ which explains how to calculate a basic perspective matrix, and the reasonment b
 I'll save it and re-read it later, I think that I need to read it at least twice to 
 understand all of it.
 
+---
+
+## 07-19-2022
+
+I implement the perspective matrix calculation. At first I thought that the Math module
+will be another plugin of the engine, just like the DirectX or WinRT ones, but it doesn't
+fit in it. And there's something that I learn about my work : if it doesn't fit, it doesn't
+belong. So I decided to put all the math stuff directly in the Engine, if something will
+be platform dependant, I'll use another "plugin" for it (certainly for floating number 
+precision), but Math _is_ Math you know ? The mathematic rules doesn't change between a 
+GNU/Linux and a Windows.
+
+The sad part is that I won't be able to check if my calculations are correct unless I've 
+made the View matrix, combine it with the Projection one, and inject it in the DX renderer.
+So here I go, let's continue with the View matrix.
+
+Also, watch the last Jurassic World today (the third one), not a bad movie, not as good as
+Jurassic Park (nothing will be as good as Jurassic Park), but a good enterntainment.
+
+Found [this post](https://www.3dgep.com/understanding-the-view-matrix/) about view matrices,
+will take a look today.
