@@ -399,3 +399,27 @@ Jurassic Park (nothing will be as good as Jurassic Park), but a good enterntainm
 
 Found [this post](https://www.3dgep.com/understanding-the-view-matrix/) about view matrices,
 will take a look today.
+
+---
+
+## 07-20-2022
+
+I've read the blog post that I found yesterday, I think that I'll implement a 
+LookAt matrix as the view matrix first. In the next version of the program, I'll
+implement FPS movements, which means user's inputs treatment and camera yaw/pitch.
+That means that I need the camera to be easily switchable.
+
+A LookAt matrix is usually defined with 3 vectors : 
+* An `eye` (ie. the origin of the camera)
+* A `up` vector for the direction
+* A `target` the location where to look at.
+
+The `up` vector is easy, it will always be `(0, 1, 0, 1)` (4 coords in a 3d world 
+for homogenous calculations).
+
+If we say that in our world, the origin of it will always be the camera itself 
+(for the moment we don't need to support several cameras), we can assume that the 
+`eye` will be `(0, 0, 0, 1)`.
+
+Which leaves us only with the `target` and in our case, we want to _display a spinning
+cube_, so our `target` will always be the center of our cube, so it's _world position_.
