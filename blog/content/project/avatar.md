@@ -380,7 +380,7 @@ understand all of it.
 
 ---
 
-## 07-19-2022
+### 07-19-2022
 
 I implement the perspective matrix calculation. At first I thought that the Math module
 will be another plugin of the engine, just like the DirectX or WinRT ones, but it doesn't
@@ -402,7 +402,7 @@ will take a look today.
 
 ---
 
-## 07-20-2022
+### 07-20-2022
 
 I've read the blog post that I found yesterday, I think that I'll implement a 
 LookAt matrix as the view matrix first. In the next version of the program, I'll
@@ -422,4 +422,4 @@ If we say that in our world, the origin of it will always be the camera itself
 `eye` will be `(0, 0, 0, 1)`.
 
 Which leaves us only with the `target` and in our case, we want to _display a spinning
-cube_, so our `target` will always be the center of our cube, so it's _world position_.
+cube_, so our `target` will always be the center of our cube, so its _world position_.
