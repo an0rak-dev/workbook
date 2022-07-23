@@ -423,3 +423,19 @@ If we say that in our world, the origin of it will always be the camera itself
 
 Which leaves us only with the `target` and in our case, we want to _display a spinning
 cube_, so our `target` will always be the center of our cube, so its _world position_.
+
+---
+
+### 07-23-2022
+
+Spend the last couple of days with my family, in vacation, that was really nice ! A little
+fresh air for the brain.
+
+Now back to work, We've been working on our _lookAt_ function, and I found (again thx Internet,
+when you manage to go outside the corp & socials networks slugs) [this post](https://www.scratchapixel.com/lessons/mathematics-physics-for-computer-graphics/lookat-function)
+which describes how it works exactly.
+
+I also started to refresh my memories about Matrix operations (cross product, normalization, dot
+product...). Might be interesting to create a blog post on that after the other I already had 
+in my todolist (one on the architecture of the engine, one on the behavior of Dx12, one on the 
+MVP matrices, and one on lookat camera vs FPS camera ?)
