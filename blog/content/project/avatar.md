@@ -439,3 +439,29 @@ I also started to refresh my memories about Matrix operations (cross product, no
 product...). Might be interesting to create a blog post on that after the other I already had 
 in my todolist (one on the architecture of the engine, one on the behavior of Dx12, one on the 
 MVP matrices, and one on lookat camera vs FPS camera ?)
+
+---
+
+### 07-27-2022
+
+Resume my daily work after vacation, so not much time to put on this project. I've created the 
+DirectX12 constant buffer which will holds our MVP matrix, and now I need to get the complete 
+transformations applied to each mesh (the Model matrix).
+
+Found [this interesting page](http://www.codinglabs.net/article_world_view_projection_matrix.aspx)
+about it, might have a look.
+
+---
+
+### 07-29-2022
+
+Start implementing Matrices multiplications and injection of the MVP matrix in the Constant buffer, 
+can't help but I've got the feeling of creating a mess... I mean no tests, try to do things which I
+don't understand fully, best way to break the project in few months...
+
+Got my hand on several books (DirectX12 explaination book, Mathematics for game programming and 
+Mathematics for Shader computation), I think I'll take the time to properly read them before coding
+again. Pretty sure that I can do the things better.
+
+Let's just hope that I won't do another nuke-then-recreate-all step...
+
