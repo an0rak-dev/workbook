@@ -20,7 +20,6 @@ tags:
     * [ ] Create another build for OpenXR
     * [ ] Initialize OpenXR
     * [ ] Render the scene in OpenXR
-    * [ ] Unit tests + CI ?
 
 ## DevLogs
 
