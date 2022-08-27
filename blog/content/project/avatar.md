@@ -465,3 +465,66 @@ again. Pretty sure that I can do the things better.
 
 Let's just hope that I won't do another nuke-then-recreate-all step...
 
+---
+
+### 08-01-2022
+
+Ok, I might not nuke all... just a little part (the Dx12 module and part of the Engine for the Math
+functions). 
+
+The Dx12 book is awesome, it gives a really in depth understanding of Dx12 for a graphic newbie. So
+I'll use all I can from it in order to rework this module properly.
+
+Also, even if it's faster, I'm not comfortable with my way of working, the code first, then test and
+adapt. When I was in HighSchool, we have this methodology for working on programs : 
+
+1. Design/Specify
+2. Write tests
+3. Code
+4. Pass the tests
+
+(Ok, it's completly a cascading cycle). And I found it nice because it represents the scientific method
+for me : The design/specification is your hypothesis, the tests you write are the experiments you design 
+to validate the hypothesis, the code is you actually running the experiments, the pass the tests is just
+the conclusion.
+
+But that would implies a lot of things. First, I'll need to _design_ my versions, not too detailled, but 
+enough to cover it all. Then I have to write a tests framework and mocks libs I used like Dx12. Finally,
+I would have to think of a way of getting rid of Visual Studio and using only a text editor and the command
+line, because man that I hate VS. (Ok Debugger is nice, but with enought tests and logs, I don't think 
+it will be useful anymore). 
+
+---
+
+### 08-07-2022
+
+Just finished reading 1/3 of the Dx12 book. Ok, I've just created a branch named `chore/refactor`, let's 
+hope it will not grow bigger and bigger... My plan is first to start with chore tasks : Setting up a Makefile,
+creating compilation targets, learning a bit more the WinDbg program, coding a log/debug output stream,
+ditching VisualStudio, and then finally creating the unit test framework.
+
+Second part will be to properly redesign the engine and the Dx12 adapter with everything I know now. I'll 
+start by implementing the Matrix operations, then go to the Dx12 specific code.
+
+---
+
+### 08-27-2022
+
+Well, shit I guess ? It's been a while since my last entry, I've been busy with my newborn daughter in the 
+past couple of days, so I didn't have much time to code.
+
+I've been working on a bunch of Python scripts to replace the Makefile, since a scripting language gives me 
+more customization options, and why bother maintaining a Makefile which runs a Python script, if I can directly
+run the Python script itself. I think that I waste those working days.
+
+I've listened a podcast (5 hours the Podcast \o/) with John Carmack ([here](https://www.youtube.com/watch?v=I845O57ZSy4)),
+and he tell that he tries to get himself into Vim for a week, like in hardcore mode, but after a week of 
+experiment, decide to drop it and return to VisualStudio, he called this week his _Civil War Reenacment_. 
+Why did he return to VS ? Mostly for the Debugger and the Profiler. Tooling has evolved to enhance our 
+productivity, it doesn't help to act like a grandpa yelling at the sky, and _he was right !_
+
+So I decided to heavily use Visual Studio, and switch to hardcore mode in VS and really take the time to learn
+it.
+
+I mean, I spend almost two weeks "working" on the project, but only spent it for tooling and not for the actual
+game engine or game demo... So time to cut the bullshit, and really make it !
