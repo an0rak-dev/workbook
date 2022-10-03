@@ -14,7 +14,7 @@ inputs:
   outDir:
     description: The output directory of the generated files
     required: false
-    default: "public"
+    default: "/tmp/generated"
 
 runs:
   using: composite
@@ -47,7 +47,7 @@ runs:
       run: |
         hugo ${HUGO_PARAMS} > hugo_logs/stdout.log 2> hugo_logs/stderr.log
         if find "${{ inputs.outDir }}" -empty | grep -q "."; then
-          echo "Directory './public' is empty"
+          echo "Directory '${{ inputs.outDir }}' is empty"
           exit 1
         fi
         ls -al ${{ inputs.outDir }}/** > hugo_logs/generated_files.txt
