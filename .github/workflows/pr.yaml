@@ -4,6 +4,7 @@ on:
   pull_request:
     paths:
       - .github/workflows/pr.yaml
+      - .github/actions
       - src
 
 env:
