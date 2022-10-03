@@ -44,6 +44,7 @@ jobs:
           sourceDir: "src"
           config: "config.yaml"
           outDir: ${{ env.OUT_DIR }}
+          baseURL: https://me.an0rak.dev
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v1
         with:
