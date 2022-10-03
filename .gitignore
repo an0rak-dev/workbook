@@ -2,7 +2,7 @@
 .*.lock.hcl
 *.tfplan
 
-blog/public
-blog/.*.lock
+src/public
+src/.*.lock
 
 .vscode

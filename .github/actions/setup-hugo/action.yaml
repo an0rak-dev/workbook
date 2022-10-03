@@ -1,0 +1,18 @@
+name: Setup Hugo
+description: Install and prepare a Hugo generator
+inputs:
+  version:
+    description: The version of the Hugo binary to use
+    required: true
+runs:
+  using: composite
+  steps:
+    - id: download
+      shell: bash
+      run: wget -O hugo.deb https://github.com/gohugoio/hugo/releases/download/v${{ inputs.version }}/hugo_${{ inputs.version }}_linux-amd64.deb 
+    - id: install
+      shell: bash
+      run: sudo dpkg -i hugo.deb
+    - id: cleanup
+      shell: bash
+      run: rm -f hugo.deb

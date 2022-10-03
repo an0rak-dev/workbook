@@ -1,0 +1,55 @@
+name: Build Hugo
+description: Build a Hugo website
+inputs:
+  config:
+    description: The path for the configuration file of Hugo
+    required: true
+  sourceDir:
+    description: The directory which contains the source of the website
+    required: true
+  baseURL:
+    description: The baseurl of the website
+    required: false
+    default: "localhost"
+  outDir:
+    description: The output directory of the generated files
+    required: false
+    default: "public"
+
+runs:
+  using: composite
+  steps:
+    - id: prepare
+      shell: bash
+      run: |
+        mkdir -p hugo_logs
+        hugoParams=""
+        hugoParams="${hugoParams} --cleanDestinationDir"
+        hugoParams="${hugoParams} --forceSyncStatic"
+        hugoParams="${hugoParams} --noChmod"
+        hugoParams="${hugoParams} --printI18nWarnings"
+        hugoParams="${hugoParams} --printMemoryUsage"
+        hugoParams="${hugoParams} --printPathWarnings"
+        hugoParams="${hugoParams} --printUnusedTemplates"
+        hugoParams="${hugoParams} --templateMetrics"
+        hugoParams="${hugoParams} --templateMetricsHints"
+        hugoParams="${hugoParams} --logFile=hugo_logs/hugo_out.log"
+        hugoParams="${hugoParams} --verboseLog"
+        hugoParams="${hugoParams} --source=${{ inputs.sourceDir }}"
+        hugoParams="${hugoParams} --config=${{ inputs.config }}"
+        hugoParams="${hugoParams} --baseURL=${{ inputs.baseURL }}"
+        hugoParams="${hugoParams} --destination=${{ inputs.outDir }}"
+        echo "HUGO_PARAMS=${hugoParams}" >> $GITHUB_ENV
+    - id: execute
+      shell: bash
+      run: |
+        hugo ${HUGO_PARAMS} > hugo_logs/stdout.log 2> hugo_logs/stderr.log
+        if find "${{ inputs.outDir }}" -empty | grep -q "."; then
+          echo "Directory './public' is empty"
+          exit 1
+        fi
+    - id: output
+      uses: actions/upload-artifact@v3
+      with:
+        name: logs
+        path: hugo_logs
