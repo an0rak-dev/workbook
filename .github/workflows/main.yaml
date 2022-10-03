@@ -1,0 +1,65 @@
+name: Deploy content
+
+on:
+  push:
+    workflow_dispatch:
+    branches:
+      - main
+
+env:
+  HUGO_VERSION: "0.104.2"
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+permissions:
+  content: read
+  pages: write
+  id-token: write
+
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Enable Pages
+        uses: actions/configure-pages@v2
+        with:
+          enablement: true
+          token : ${{ github.token }}
+          
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Setup Hugo
+        uses: ./.github/actions/setup-hugo
+        with:
+          version: ${{ env.HUGO_VERSION }}
+      - name: Build
+        uses: ./.github/actions/build-hugo
+        with:
+          sourceDir: "src"
+          config: "config.yaml"
+      - name: Upload artifacts
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: ./public
+          retention-days: "1"
+
+  deploy:
+    runs-on: ubuntu-latest
+    needs: [setup, build]
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GH Pages
+        id: deployement
+        uses: actions/deploy-pages@v1
+        with:
+          token: ${{ github.token }}
+          timeout: "120000" # 2 minute
+          error_count: 5
+
