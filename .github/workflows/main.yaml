@@ -8,6 +8,7 @@ on:
 
 env:
   HUGO_VERSION: "0.104.2"
+  OUT_DIR: "/tmp/generated"
 
 concurrency:
   group: pages
@@ -42,10 +43,11 @@ jobs:
         with:
           sourceDir: "src"
           config: "config.yaml"
+          outDir: ${{ env.OUT_DIR }}
       - name: Upload artifacts
         uses: actions/upload-pages-artifact@v1
         with:
-          path: ./public
+          path: ${{ env.OUT_DIR }}
           retention-days: "1"
 
   deploy:
